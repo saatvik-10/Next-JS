@@ -23,7 +23,9 @@ const Home = () => {
   }, []);
 
   return loading ? (
-    <SkeletonCard />
+    <div className='flex justify-center items-center min-h-screen'>
+      <SkeletonCard />
+    </div>
   ) : (
     <div>
       <main className='flex flex-grow flex-col items-center justify-center px-4 md:px-24 py-12'>

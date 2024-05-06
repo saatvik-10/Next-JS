@@ -2,11 +2,15 @@ import { Skeleton } from '@/components/ui/skeleton';
 
 export function SkeletonCard() {
   return (
-    <div className='flex flex-col space-y-3 bg-black'>
-      <Skeleton className='h-[125px] w-[250px] rounded-xl' />
-      <div className='space-y-2'>
-        <Skeleton className='h-4 w-[250px]' />
-        <Skeleton className='h-4 w-[200px]' />
+    <div className='flex flex-col justify-center items-center space-y-3 bg-white'>
+      <Skeleton className='h-[75px] w-[1200px] rounded-xl' />
+      <Skeleton className='h-[25px] w-[500px] rounded-xl' />
+
+      <div className='pt-10'>
+        <Skeleton className='h-[390px] w-[313px] rounded-xl' />
+      </div>
+      <div className='pt-12'>
+        <Skeleton className='h-7 w-[435px]' />
       </div>
     </div>
   );
