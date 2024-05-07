@@ -15,6 +15,7 @@ import { Separator } from '@/components/ui/separator';
 import { Loader2, RefreshCcw } from 'lucide-react';
 import { User } from 'next-auth';
 import { MessageCard } from '@/components/MessageCard/page';
+import { useRouter } from 'next/navigation';
 
 const page = () => {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -22,6 +23,7 @@ const page = () => {
   const [isSwitchLoading, setIsSwitchLoading] = useState(false);
 
   const { toast } = useToast();
+  const router = useRouter()
 
   const handleDeleteMsg = (messageId: string) => {
     setMessages(messages.filter((message) => message._id !== messageId));
@@ -116,7 +118,7 @@ const page = () => {
     }
   };
 
-  const { username } = session?.user as User;
+  const username  = session?.user as User; //REVIEW AT THE END
   const baseUrl = `${window.location.protocol}//${window.location.host}`;
   const profileUrl = `${baseUrl}/u/${username}`;
   const copyToClipboard = () => {
@@ -127,7 +129,7 @@ const page = () => {
     });
   };
   if (!session || !session.user) {
-    return <div>Please Login</div>;
+    router.replace('/sign-in')
   }
 
   return (

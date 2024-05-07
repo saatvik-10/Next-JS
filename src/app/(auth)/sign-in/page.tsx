@@ -37,12 +37,21 @@ const page = () => {
       identifier: data.identifier,
       password: data.password,
     });
+
     if (result?.error) {
-      toast({
-        title: 'Login Failed',
-        description: 'Incorrect username or password',
-        variant: 'destructive',
-      });
+      if (result.error === 'CredentialsSignin') {
+        toast({
+          title: 'Login Failed',
+          description: 'Incorrect username or password',
+          variant: 'destructive',
+        });
+      } else {
+        toast({
+          title: 'Error',
+          description: result.error,
+          variant: 'destructive',
+        });
+      }
     }
 
     if (result?.url) {
@@ -74,7 +83,7 @@ const page = () => {
               )}
             />
             <FormField
-              name='identifier'
+              name='password'
               control={form.control}
               render={({ field }) => (
                 <FormItem>
