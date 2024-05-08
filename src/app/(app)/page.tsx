@@ -34,7 +34,7 @@ const Home = () => {
             Dive into the World of Anonymous Conversations
           </h1>
           <p className='mt-3 md:mt-4 text-base md:text-lg'>
-            Explore Mystry Message - Where your identity remains a secret
+            Explore Mystery Message - Where your identity remains a secret
           </p>
         </section>
         <Carousel
@@ -62,7 +62,7 @@ const Home = () => {
         </Carousel>
       </main>
       <footer className='text-center p-4 md:p-6'>
-        © 2024 Mystry Message. All rights reserved.
+        © 2024 Mystery Message. All rights reserved.
       </footer>
     </div>
   );
