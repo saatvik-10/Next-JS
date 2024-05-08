@@ -118,7 +118,7 @@ const page = () => {
     }
   };
 
-  const username  = session?.user as User; //REVIEW AT THE END
+  const {username}  = session?.user as User; //REVIEW AT THE END
   const baseUrl = `${window.location.protocol}//${window.location.host}`;
   const profileUrl = `${baseUrl}/u/${username}`;
   const copyToClipboard = () => {
